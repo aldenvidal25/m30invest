@@ -16,6 +16,5 @@ class DashboardController extends Controller
         $transanctions = Transaction::count();
         $amount = Transaction::sum('invest_amount');
         return view('frontend.user.dashboard', compact('transactdata', 'users', 'transanctions', 'amount'));
-        // return view('frontend.user.dashboard');
     }
 }
