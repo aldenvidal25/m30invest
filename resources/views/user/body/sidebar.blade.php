@@ -44,7 +44,7 @@
                 </li>
 
                 <li>
-                    <a href="{{ route('user.deposit.log') }}" class="waves-effect">
+                    <a href="{{ route('withdrawLog') }}" class="waves-effect">
                         <i class="ri-layout-3-line"></i>
                         <span>Investments History</span>
                     </a>

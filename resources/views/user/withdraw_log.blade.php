@@ -33,7 +33,7 @@
                             @foreach ($transactdata as $trans)
                                 <tr>
                                     <td>{{ $trans->id }}</td>
-                                    <td>Deposit With {{ $trans->method }}</td>
+                                    <td>Payout With {{ $trans->method }}</td>
                                     <td>TRX{{ \Carbon\Carbon::parse($trans->created_at)->format('time') }}{{ $trans->id }}
                                     </td>
                                     <td>{{ $trans->invest_amount }}</td>

@@ -64,6 +64,7 @@ Route::group(['middleware' => ['auth', 'role:user'], 'prefix' => 'user', 'as' =>
 
 Route::middleware(['auth', 'role:user'])->group(function () {
     Route::get('user/deposit-log', [DepositController::class, 'depositLog'])->name('log');
+    Route::get('user/withdraw-log', [DepositController::class, 'withdrawLog'])->name('withdrawLog');
     // Route::get('/user/dashboard', [UserController::class, 'UserDashboard'])->name('user.dashboard'); //user dashboard
 
     Route::get('/user/logout', [UserController::class, 'UserDestroy'])->name('user.logout');

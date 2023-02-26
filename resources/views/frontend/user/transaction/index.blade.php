@@ -35,30 +35,29 @@
                                 style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                 <thead>
                                     <tr>
-                                        <th>ID</th>
                                         <th>DESCRIPTION</th>
-                                        <th>TRANSACTIONS ID</th>
+                                        <th>TRANSACTION ID</th>
                                         <th>TYPE</th>
                                         <th>AMOUNT</th>
-                                        <th>STATUS</th> 
+                                        <th>DATE</th>
                                         <th>METHOD</th>
                                     </tr>
                                 </thead>
 
 
                                 <tbody>
-                                    @foreach($transactdata as $trans)
-                                    <tr>
-                                        <td>{{ $trans->id }}</td>
-                                        <td>Deposit With {{ $trans->method }}</td>
-                                        <td>TRX{{ \Carbon\Carbon::parse($trans->created_at)->format('time') }}{{ $trans->id }}</td>
-                                        <td>{{ \Carbon\Carbon::parse($trans->created_at)->format('d/m/Y') }}</td>
-                                        <td>{{ $trans->invest_amount }}</td>
-                                        <td>{{ $trans->type }}</td>
-                                        <td>{{ $trans->method }}</td>
-                                    </tr>
+                                    @foreach ($transactdata as $trans)
+                                        <tr>
+                                            <td>{{ $trans->type }} With {{ $trans->method }}</td>
+                                            <td>TRX{{ \Carbon\Carbon::parse($trans->created_at)->format('time') }}{{ $trans->id }}
+                                            </td>
+                                            <td>{{ $trans->type }}</td>
+                                            <td>{{ $trans->invest_amount }}</td>
+                                            <td>{{ \Carbon\Carbon::parse($trans->created_at)->format('d/m/Y') }}</td>
+                                            <td>{{ $trans->method }}</td>
+                                        </tr>
                                     @endforeach
-                                                               </tbody>
+                                </tbody>
                             </table>
                         </div>
                     </div>

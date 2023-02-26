@@ -58,7 +58,7 @@
                 </li>
 
                 <li>
-                    <a href="javascript: void(0);" class="waves-effect">
+                    <a href="{{ route('withdrawLog') }}" class="waves-effect">
                         <i class="ri-layout-3-line"></i>
                         <span>Withdraw History</span>
                     </a>
