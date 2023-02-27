@@ -15,13 +15,13 @@
                                     <label for="method" class="form-label">Payment Method</label>
                                     <select name="method" class="form-select" id="gateway" required>
                                         <option selected disabled value="">SELECT GATEWAY</option>
-                                        <option value="Gcash">GCASH</option>
-                                        <option value="Paypal">PAYPAL</option>
-                                        <option value="BPI">BPI</option>
+                                        <option value="gcash">GCASH</option>
+                                        <option value="paypal">PAYPAL</option>
+                                        <option value="bpi">BPI</option>
                                     </select>
                                     @error('method')
-                                        <p class="text-danger text-xs mt-2">
-                                            {{ $message }}
+                                        <p class="text-red-500 text-xs mt-2">
+                                            invalid
                                         </p>
                                     @enderror
                                     <div class="invalid-feedback">
