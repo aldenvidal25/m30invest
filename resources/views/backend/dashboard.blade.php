@@ -165,28 +165,29 @@
                                             <tr>
                                                 <th>Date</th>
                                                 <th>Name</th>
-                                                <th>Investment</th>
                                                 <th>Email</th>
+                                                <th>Investment</th>
                                                 <th>Status</th>
-                                                <th style="width: 120px;">Action</th>
+                                                <th style="width: 120px;">Payout Date</th>
                                             </tr>
                                         </thead><!-- end thead -->
                                         <tbody>
                                             @foreach ($data['transactions_data'] as $transact)
                                                 <tr>
-                                                    <td>{{ $transact->created_at }}</td>
-                                                    <td>{{ $transact->user->name }}</td>
-                                                    <td>{{ $transact->invest_amount }}</td>
+                                                    <td>{{ $transact->created_at->format('m-d-Y') }}</td>
+                                                    <td>{{ $transact->user->username }}</td>
                                                     <td>{{ $transact->user->email }}</td>
-                                                    {{-- <td>
-                                                        <div class="font-size-13"><i
-                                                                class="ri-checkbox-blank-circle-fill font-size-10 text-success align-middle me-2"></i>Active
-                                                        </div>
-                                                    </td> --}}
+                                                    <td>{{ $transact->invest_amount }}</td>
                                                     <td>
-                                                        {{ $transact->user->next_profit_time }}
+                                                        <div class="font-size-13">
+                                                            <i
+                                                                class="ri-checkbox-blank-circle-fill font-size-10 text-success align-middle me-2">{{ $transact->status }}
+                                                            </i>
+                                                        </div>
                                                     </td>
-                                                    <td>$42,450</td>
+                                                    <td>
+                                                        {{ $transact->next_profit_time }}
+                                                    </td>
                                                 </tr>
                                             @endforeach
                                             <!-- end -->

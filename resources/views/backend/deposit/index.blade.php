@@ -1,7 +1,4 @@
 @extends('backend.layouts.app')
-@section('title')
-    {{ __('Investments History') }}
-@endsection
 @section('content')
     <div class="page-content">
         <div class="container-fluid">
@@ -28,7 +25,7 @@
                     <div class="card">
                         <div class="card-body">
 
-                            <h4 class="card-title">Recent Transactions</h4>
+                            <h4 class="card-title">All Investments</h4>
                             <!--description here -->
                             <p class="card-title-desc">
                             </p>
@@ -49,12 +46,17 @@
                                 <tbody>
                                     @foreach ($transactdata as $transact)
                                         <tr>
-                                            <td>{{ $transact->user->created_at }}</td>
+                                            <td>{{ $transact->user->created_at->format('m-d-Y') }}</td>
                                             <td>{{ $transact->user->name }}</td>
                                             <td>{{ $transact->tnx }}</td>
                                             <td>{{ $transact->invest_amount }}</td>
                                             <td>{{ $transact->method }}</td>
-                                            <td>{{ $transact->status }}</td>
+                                            <td>
+                                                <div class="font-size-13">
+                                                    <i
+                                                        class="ri-checkbox-blank-circle-fill font-size-10 text-success align-middle me-2">{{ $transact->status }}</i>
+                                                </div>
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>

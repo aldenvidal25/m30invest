@@ -13,8 +13,25 @@ class DashboardController extends Controller
     {
         $transactdata = Transaction::All();
         $users = User::count();
-        $transanctions = Transaction::count();
+        $transanctions = where('user_id', $user->id);
         $amount = Transaction::sum('invest_amount');
-        return view('frontend.user.dashboard', compact('transactdata', 'users', 'transanctions', 'amount'));
+
+        $dataCount = [
+            'total_transaction' => $transactions->count(),
+            'total_deposit' => $user->totalDeposit(),
+            'total_investment' => $user->totalInvestment(),
+            'total_profit' => $user->totalProfit(),
+            'total_withdraw' => $user->totalWithdraw(),
+            'total_transfer' => $user->totalTransfer(),
+            'total_referral_profit' => $user->totalReferralProfit(),
+            'total_referral' => $referral->relationships()->count(),
+
+            'deposit_bonus' => $user->totalDepositBonus(),
+            'investment_bonus' => $user->totalInvestBonus(),
+            'rank_achieved' => $user->rankAchieved(),
+            'total_ticket' => $user->ticket->count(),
+        ];
+
+        return view('frontend.user.dashboard', compact('transactdata', 'users', 'transanctions', 'amount', 'dataCount'));
     }
 }
