@@ -59,23 +59,10 @@ class AdminController extends Controller
             'latest_user' => $latestUser->count(),
             'latest_username' => $latestUser,
             // 'latest_invest' => $latestInvest,
-
-            // 'total_staff' => $totalStaff,
-
             // 'total_deposit' => $totalDeposit->sum('amount'),
             // 'total_send' => $totalSend,
             'total_investment' => $totalInvestment->sum('invest_amount'),
             // 'total_withdraw' => $totalWithdraw,
-            // 'total_referral' => $totalReferral,
-
-            // 'last7days_deposit' => $last7daysDeposit,
-            // 'last7days_invest' => $last7daysInvest,
-
-            // 'deposit_bonus' => $transaction->totalDepositBonus(),
-            // 'investment_bonus' => $transaction->totalInvestBonus(),
-            // 'total_gateway' => $totalGateway,
-            // 'total_ticket' => Ticket::count(),
-
             // 'date_range' => $dataRange,
 
         ];

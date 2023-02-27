@@ -25,7 +25,8 @@ class InvestmentController extends Controller
         $transactdata = Transaction::where(function ($query) {
             $query->where('type', TxnType::Withdraw);
         })->get();
+        $transactsData = Transaction::all();
 
-        return view('backend.withdraw.payouts', compact('data'));
+        return view('backend.withdraw.payouts', compact('transactdata', 'transactsData'));
     }
 }
