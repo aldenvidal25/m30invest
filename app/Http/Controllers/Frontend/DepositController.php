@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Models\Transaction;
-use App\Enums\TxnType;
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
 use Carbon\Carbon;
+use App\Models\User;
+use App\Enums\TxnType;
+use App\Models\Transaction;
 use Illuminate\Support\Str;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class DepositController extends Controller
 {
@@ -39,15 +41,17 @@ class DepositController extends Controller
     public function depositNow(Request $request)
     {
 
-        $validator = Validator::make($request->all(), [
+
+        $request->validate([
+            'image' => 'required|mimes:jpg,png,jpeg|max:5048',
             "method" => ['required'],
             "invest_amount" => ['required', 'regex:/^[0-9]+(\.[0-9][0-9]?)?$/']
         ]);
 
-        if ($validator->fails()) {
-            notify()->error($validator->errors()->first(), 'Error');
-            return redirect()->back();
-        }
+        $newImageName = time() . '-' . $request->name . '.' . $request->image->extension();
+
+        $request->image->move(public_path('upload/admin_images'), $newImageName);
+
         $input = $request->all();
         //retrieves the investment amount from the input.
 
@@ -79,25 +83,11 @@ class DepositController extends Controller
             'method' => $investMethod,
             'next_profit_time' => $nextProfitTime,
             'status' => $status,
+            'image_path' => $newImageName,
         ];
-
 
         Transaction::create($data);
 
-
-
-
-
-        // $transaction = Transaction::create($request->validate([
-        //     "method" => 'required',
-        //     "invest_amount" => 'required|email',
-        //     'type' => 'Deposit',
-        //     'user_id' => auth()->id(),
-        // ]));
-
-        // Alert::success('Deposit Successfully', 'Added to Transanctions Log');
-        // alert()->success('SuccessAlert','Lorem ipsum dolor sit amet.')->showConfirmButton('Confirm', '#3085d6');
-        // example:
         alert()->success('Deposit Successfully', 'Added to Transanctions Log.')->persistent(true, false);
 
         return redirect()->back();
