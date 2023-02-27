@@ -13,6 +13,6 @@ class TransactionSeeder extends Seeder
     public function run(): void
     {
         // $this->call([TransactionSeeder::class]);
-        // \App\Models\Transaction::factory(10)->create();
+        \App\Models\Transaction::factory(10)->create();
     }
 }

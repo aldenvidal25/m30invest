@@ -27,9 +27,8 @@ class AdminController extends Controller
     public function AdminDashboard()
     {
         $transaction = new Transaction();
-        $transactdata = Transaction::all();
+        $transactData = Transaction::orderBy('created_at', 'desc')->take(10)->get();
         $user = new User();
-
 
         $latestUser = $user->latest()->take(5)->get();
 
@@ -55,6 +54,7 @@ class AdminController extends Controller
             'deposit_count' => $depositCount,
             'users_name' => $user,
             'register_user' => $user->count(),
+            'transactions_data' => $transactData,
             // 'active_user' => $activeUser,
             'latest_user' => $latestUser->count(),
             'latest_username' => $latestUser,
@@ -80,7 +80,7 @@ class AdminController extends Controller
 
         ];
         // return view('admin.index');// old
-        return view('backend.dashboard', compact('data', 'transaction'));
+        return view('backend.dashboard', compact('data', 'transactData'));
     }
 
     public function AdminDestroy(Request $request)

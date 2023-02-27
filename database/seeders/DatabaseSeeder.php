@@ -3,9 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-
-use App\Models\User;
-use App\Models\Transaction;
+use Database\Factories\UserFactory as FactoriesUserFactory;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
@@ -16,24 +14,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-    // {
-        $this->call([UsersTableSeeder::class]);
-        \App\Models\User::factory(10)->create();
-        // $user = User::factory(10)->create();
-
+        // $this->call([UsersTableSeeder::class]);
+        // FactoriesUserFactory::factory(10)->create();
+        // \App\Models\Factory::factory(10)->create();
         \App\Models\Transaction::factory(10)->create();
-    // }
-
-    // $user = User::factory()->create([
-    //     'name' => 'Kodego SP404',
-    //     'username' => 'kodego',
-    //     'email' => 'sp404@gmail.com',
-    //     'password' => Hash::make('111'),
-
-    // ]);
-
-    // Transaction::factory(10)->create([
-    //     'user_id' => $user->id
-    // ]);
-}
+        // \App\Models\Transaction::factory(10)->create();
+    }
 }
