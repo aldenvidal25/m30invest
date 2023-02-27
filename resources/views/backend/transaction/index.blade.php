@@ -6,7 +6,6 @@ Admin's Transaction
 @section('content')
     <div class="page-content">
         <div class="container-fluid">
-
             <!-- start page title -->
             <div class="row">
                 <div class="col-12">
@@ -112,9 +111,7 @@ Admin's Transaction
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-                            {{-- @php
-                                dd($transactdata);
-                            @endphp --}}
+
                             <h4 class="card-title">Recent Transactions</h4>
                             <!--description here -->
                             <p class="card-title-desc">

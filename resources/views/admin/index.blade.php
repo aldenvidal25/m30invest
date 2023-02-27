@@ -2,7 +2,6 @@
 @section('admin')
     <div class="page-content">
         <div class="container-fluid">
-
             <!-- start page title -->
             <div class="row">
                 <div class="col-12">
@@ -437,171 +436,171 @@
                 <!-- end col -->
 
             </div><!-- end col -->
-        </div>
-        <div class="row">
-            <div class="col-xl-12">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="dropdown float-end">
-                            <a href="#" class="dropdown-toggle arrow-none card-drop" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                <i class="mdi mdi-dots-vertical"></i>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-end">
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item">Sales Report</a>
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item">Export Report</a>
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item">Profit</a>
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item">Action</a>
+
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="dropdown float-end">
+                                <a href="#" class="dropdown-toggle arrow-none card-drop" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <i class="mdi mdi-dots-vertical"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end">
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item">Sales Report</a>
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item">Export Report</a>
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item">Profit</a>
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item">Action</a>
+                                </div>
                             </div>
-                        </div>
 
-                        <h4 class="card-title mb-4">Latest Investment</h4>
+                            <h4 class="card-title mb-4">Latest Investment</h4>
 
-                        <div class="table-responsive">
-                            <table class="table table-centered mb-0 align-middle table-hover table-nowrap">
-                                <thead class="table-light">
-                                    <tr>
-                                        <th>User</th>
-                                        <th>Investment</th>
-                                        <th>Start Date</th>
-                                        <th>Next Payout</th>
-                                        <th style="width: 120px;">Status</th>
-                                    </tr>
-                                </thead><!-- end thead -->
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <h6 class="mb-0">Charles Casey</h6>
-                                        </td>
+                            <div class="table-responsive">
+                                <table class="table table-centered mb-0 align-middle table-hover table-nowrap">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>User</th>
+                                            <th>Investment</th>
+                                            <th>Start Date</th>
+                                            <th>Next Payout</th>
+                                            <th style="width: 120px;">Status</th>
+                                        </tr>
+                                    </thead><!-- end thead -->
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <h6 class="mb-0">Charles Casey</h6>
+                                            </td>
 
-                                        <td>
-                                            <div class="font-size-13"><i
-                                                    class="ri-checkbox-blank-circle-fill font-size-10 text-success align-middle me-2"></i>Active
-                                            </div>
-                                        </td>
+                                            <td>
+                                                <div class="font-size-13"><i
+                                                        class="ri-checkbox-blank-circle-fill font-size-10 text-success align-middle me-2"></i>Active
+                                                </div>
+                                            </td>
 
-                                        <td>
-                                            04 Apr, 2021
-                                        </td>
+                                            <td>
+                                                04 Apr, 2021
+                                            </td>
 
-                                    </tr>
-                                    <!-- end -->
-                                    <tr>
-                                        <td>
-                                            <h6 class="mb-0">Alex Adams</h6>
-                                        </td>
+                                        </tr>
+                                        <!-- end -->
+                                        <tr>
+                                            <td>
+                                                <h6 class="mb-0">Alex Adams</h6>
+                                            </td>
 
-                                        <td>
-                                            <div class="font-size-13"><i
-                                                    class="ri-checkbox-blank-circle-fill font-size-10 text-warning align-middle me-2"></i>Deactive
-                                            </div>
-                                        </td>
+                                            <td>
+                                                <div class="font-size-13"><i
+                                                        class="ri-checkbox-blank-circle-fill font-size-10 text-warning align-middle me-2"></i>Deactive
+                                                </div>
+                                            </td>
 
-                                        <td>
-                                            01 Aug, 2021
-                                        </td>
+                                            <td>
+                                                01 Aug, 2021
+                                            </td>
 
-                                    </tr>
-                                    <!-- end -->
-                                    <tr>
-                                        <td>
-                                            <h6 class="mb-0">Prezy Kelsey</h6>
-                                        </td>
+                                        </tr>
+                                        <!-- end -->
+                                        <tr>
+                                            <td>
+                                                <h6 class="mb-0">Prezy Kelsey</h6>
+                                            </td>
 
-                                        <td>
-                                            <div class="font-size-13"><i
-                                                    class="ri-checkbox-blank-circle-fill font-size-10 text-success align-middle me-2"></i>Active
-                                            </div>
-                                        </td>
+                                            <td>
+                                                <div class="font-size-13"><i
+                                                        class="ri-checkbox-blank-circle-fill font-size-10 text-success align-middle me-2"></i>Active
+                                                </div>
+                                            </td>
 
-                                        <td>
-                                            15 Jun, 2021
-                                        </td>
+                                            <td>
+                                                15 Jun, 2021
+                                            </td>
 
-                                    </tr>
-                                    <!-- end -->
-                                    <tr>
-                                        <td>
-                                            <h6 class="mb-0">Ruhi Fancher</h6>
-                                        </td>
+                                        </tr>
+                                        <!-- end -->
+                                        <tr>
+                                            <td>
+                                                <h6 class="mb-0">Ruhi Fancher</h6>
+                                            </td>
 
-                                        <td>
-                                            <div class="font-size-13"><i
-                                                    class="ri-checkbox-blank-circle-fill font-size-10 text-success align-middle me-2"></i>Active
-                                            </div>
-                                        </td>
+                                            <td>
+                                                <div class="font-size-13"><i
+                                                        class="ri-checkbox-blank-circle-fill font-size-10 text-success align-middle me-2"></i>Active
+                                                </div>
+                                            </td>
 
-                                        <td>
-                                            01 March, 2021
-                                        </td>
+                                            <td>
+                                                01 March, 2021
+                                            </td>
 
-                                    </tr>
-                                    <!-- end -->
-                                    <tr>
-                                        <td>
-                                            <h6 class="mb-0">Juliet Pineda</h6>
-                                        </td>
+                                        </tr>
+                                        <!-- end -->
+                                        <tr>
+                                            <td>
+                                                <h6 class="mb-0">Juliet Pineda</h6>
+                                            </td>
 
-                                        <td>
-                                            <div class="font-size-13"><i
-                                                    class="ri-checkbox-blank-circle-fill font-size-10 text-success align-middle me-2"></i>Active
-                                            </div>
-                                        </td>
+                                            <td>
+                                                <div class="font-size-13"><i
+                                                        class="ri-checkbox-blank-circle-fill font-size-10 text-success align-middle me-2"></i>Active
+                                                </div>
+                                            </td>
 
-                                        <td>
-                                            01 Jan, 2021
-                                        </td>
+                                            <td>
+                                                01 Jan, 2021
+                                            </td>
 
-                                    </tr>
-                                    <!-- end -->
-                                    <tr>
-                                        <td>
-                                            <h6 class="mb-0">Den Simpson</h6>
-                                        </td>
+                                        </tr>
+                                        <!-- end -->
+                                        <tr>
+                                            <td>
+                                                <h6 class="mb-0">Den Simpson</h6>
+                                            </td>
 
-                                        <td>
-                                            <div class="font-size-13"><i
-                                                    class="ri-checkbox-blank-circle-fill font-size-10 text-warning align-middle me-2"></i>Deactive
-                                            </div>
-                                        </td>
+                                            <td>
+                                                <div class="font-size-13"><i
+                                                        class="ri-checkbox-blank-circle-fill font-size-10 text-warning align-middle me-2"></i>Deactive
+                                                </div>
+                                            </td>
 
-                                        <td>
-                                            01 Sep, 2021
-                                        </td>
+                                            <td>
+                                                01 Sep, 2021
+                                            </td>
 
-                                    </tr>
-                                    <!-- end -->
-                                    <tr>
-                                        <td>
-                                            <h6 class="mb-0">Mahek Torres</h6>
-                                        </td>
+                                        </tr>
+                                        <!-- end -->
+                                        <tr>
+                                            <td>
+                                                <h6 class="mb-0">Mahek Torres</h6>
+                                            </td>
 
-                                        <td>
-                                            <div class="font-size-13"><i
-                                                    class="ri-checkbox-blank-circle-fill font-size-10 text-success align-middle me-2"></i>Active
-                                            </div>
-                                        </td>
+                                            <td>
+                                                <div class="font-size-13"><i
+                                                        class="ri-checkbox-blank-circle-fill font-size-10 text-success align-middle me-2"></i>Active
+                                                </div>
+                                            </td>
 
-                                        <td>
-                                            20 May, 2021
-                                        </td>
+                                            <td>
+                                                20 May, 2021
+                                            </td>
 
-                                    </tr>
-                                    <!-- end -->
-                                </tbody><!-- end tbody -->
-                            </table> <!-- end table -->
-                        </div>
+                                        </tr>
+                                        <!-- end -->
+                                    </tbody><!-- end tbody -->
+                                </table> <!-- end table -->
+                            </div>
+                        </div><!-- end card -->
                     </div><!-- end card -->
-                </div><!-- end card -->
-            </div>
-            <!-- end col -->
+                </div>
+                <!-- end col -->
 
+            </div>
         </div>
-    </div>
 
     </div>
 @endsection
