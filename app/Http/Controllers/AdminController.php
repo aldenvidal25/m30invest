@@ -27,7 +27,7 @@ class AdminController extends Controller
     public function AdminDashboard()
     {
         $transaction = new Transaction();
-        $transactData = Transaction::orderBy('created_at', 'desc')->take(5)->get();
+        $transactData = Transaction::orderBy('created_at', 'desc')->take(10)->get();
         $user = new User();
 
         $latestUser = $user->latest()->take(5)->get();
