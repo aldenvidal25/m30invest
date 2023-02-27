@@ -175,12 +175,12 @@
                                             </tr>
                                         </thead><!-- end thead -->
                                         <tbody>
-                                            @foreach ($data['latest_username'] as $user)
+                                            @foreach ($data['transactions_data'] as $transact)
                                                 <tr>
                                                     <td>
-                                                        <h6 class="mb-0">{{ $user->username }}</h6>
+                                                        <h6 class="mb-0">{{ $transact->user->name }}</h6>
                                                     </td>
-                                                    <td></td>
+                                                    <td>{{ $transact->invest_amount }}</td>
                                                     <td>
                                                         <div class="font-size-13"><i
                                                                 class="ri-checkbox-blank-circle-fill font-size-10 text-success align-middle me-2"></i>Active
