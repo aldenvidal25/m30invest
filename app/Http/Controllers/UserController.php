@@ -18,7 +18,7 @@ class UserController extends Controller
 
     public function UserDashboard()
     {
-        return view('user.index');
+        return view('user.dashboard');
     }
 
     public function UserDestroy(Request $request)

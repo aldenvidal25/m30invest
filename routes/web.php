@@ -8,6 +8,7 @@ use App\Http\Controllers\Backend\InvestmentController;
 use App\Http\Controllers\Frontend\TransactionController;
 use App\Http\Controllers\Frontend\DashboardController;
 use App\Http\Controllers\Frontend\DepositController;
+use App\Http\Controllers\Frontend\GatewayController;
 use App\Http\Controllers\Frontend\IndexController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Home\HomeSliderController;
@@ -136,3 +137,9 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+//Paypal Route
+Route::post('paypal/payment', [GatewayController::class, 'payment '])->name('payment.payment');
+
+Route::get('paypal/success', [GatewayController::class, 'success'])->name('paypal.success');
+Route::get('paypal/cancel', [GatewayController::class, 'cancel'])->name('paypal.cancel');
