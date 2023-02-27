@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\TransactionController as BackendTransactionController;
+use App\Http\Controllers\Backend\InvestmentController;
 use App\Http\Controllers\Frontend\TransactionController;
 use App\Http\Controllers\Frontend\DashboardController;
 use App\Http\Controllers\Frontend\DepositController;
@@ -103,6 +104,10 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/admin/profile', [AdminController::class, 'AdminProfile'])->name('admin.profile');
 
     Route::get('/admin/transactions', [BackendTransactionController::class, 'transactions'])->name('admin.transactions');
+
+    Route::get('admin/depositlog', [InvestmentController::class, 'investlog'])->name('admin.depositlog');
+
+    Route::get('admin/payouts', [InvestmentController::class, 'payouts'])->name('admin.payouts');
 
     // Route::get('admin/profile/edit', [AdminController::class, 'AdminEditProfile'])->name('admin.edit.profile'); // TO DELETE
 

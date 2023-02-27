@@ -48,3 +48,25 @@
 <script src="{{ asset('backend/assets/js/app.js') }}"></script>
 {{-- {{ asset('backend/')}} --}}
 @yield('script')
+@section('script')
+    <script>
+        $(document).ready(function() {
+            $("#gateway").on('change', function() {
+                $(".data").hide();
+                $("#" + $(this).val()).fadeIn(700);
+            }).change();
+        })
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#image').change(function(e) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('#showImage').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(e.target.files['0']);
+            });
+        });
+    </script>
+@endsection

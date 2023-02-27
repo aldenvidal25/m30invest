@@ -1,32 +1,43 @@
-<!-- JAVASCRIPT -->
-<script src="{{ asset('backend/assets/libs/jquery/jquery.min.js') }}"></script>
-<script src="{{ asset('backend/assets/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-<script src="{{ asset('backend/assets/libs/metismenu/metisMenu.min.js') }}"></script>
-<script src="{{ asset('backend/assets/libs/simplebar/simplebar.min.js') }}"></script>
-<script src="{{ asset('backend/assets/libs/node-waves/waves.min.js') }}"></script>
+    <!-- JAVASCRIPT -->
+    <script src="{{ asset('backend/assets/libs/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/libs/metismenu/metisMenu.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/libs/simplebar/simplebar.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/libs/node-waves/waves.min.js') }}"></script>
 
 
-<!-- apexcharts -->
-<script src="{{ asset('backend/assets/libs/apexcharts/apexcharts.min.js') }}"></script>
+    <!-- apexcharts -->
+    <script src="{{ asset('backend/assets/libs/apexcharts/apexcharts.min.js') }}"></script>
 
-<!-- jquery.vectormap map -->
-<script src="{{ asset('backend/assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.min.js') }}">
-</script>
-<script src="{{ asset('backend/assets/libs/admin-resources/jquery.vectormap/maps/jquery-jvectormap-us-merc-en.js') }}">
-</script>
+    <!-- jquery.vectormap map -->
+    <script src="{{ asset('backend/assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.min.js') }}">
+    </script>
+    <script src="{{ asset('backend/assets/libs/admin-resources/jquery.vectormap/maps/jquery-jvectormap-us-merc-en.js') }}">
+    </script>
 
-<!-- Required datatable js -->
-<script src="{{ asset('backend/assets/libs/datatables.net/js/jquery.dataTables.min.js') }}"></script>
-<script src="{{ asset('backend/assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
+    <!-- Required datatable js -->
+    <script src="{{ asset('backend/assets/libs/datatables.net/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
+    {{ asset('backend/') }}
+    <!-- Buttons examples -->
+    <script src="{{ asset('backend/assets/libs/datatables.net-buttons/js/dataTables.buttons.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/libs/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/libs/jszip/jszip.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/libs/pdfmake/build/pdfmake.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/libs/pdfmake/build/vfs_fonts.js') }}"></script>
+    <script src="{{ asset('backend/assets/libs/datatables.net-buttons/js/buttons.html5.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/libs/datatables.net-buttons/js/buttons.print.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/libs/datatables.net-buttons/js/buttons.colVis.min.js') }}"></script>
 
-<!-- Responsive examples -->
-<script src="{{ asset('backend/assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js') }}"></script>
-<script src="{{ asset('backend/assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js') }}">
-</script>
+    <script src="{{ asset('backend/assets/libs/datatables.net-keytable/js/dataTables.keyTable.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/libs/datatables.net-select/js/dataTables.select.min.js') }}"></script>
 
-<script src="{{ asset('backend/assets/js/pages/dashboard.init.js') }}"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-</script>
-<!-- App js -->
-{{-- <script src="{{ asset('backend/assets/js/app.js') }}"></script> --}}
+    <!-- Responsive examples -->
+    <script src="{{ asset('backend/assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js') }}">
+    </script>
+
+    <script src="{{ asset('backend/assets/js/pages/dashboard.init.js') }}"></script>
+
+    <!-- App js -->
+    {{-- <script src="{{ asset('backend/assets/js/app.js') }}"></script> --}}

@@ -1,4 +1,7 @@
 @extends('backend.layouts.app')
+@section('title')
+    {{ __('Investments History') }}
+@endsection
 @section('content')
     <div class="page-content">
         <div class="container-fluid">
@@ -6,7 +9,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                        <h4 class="mb-sm-0">Admin Dashboard</h4>
+                        <h4 class="mb-sm-0">{{ Auth::user()->role }} Dashboard</h4>
 
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
@@ -25,7 +28,7 @@
                     <div class="card">
                         <div class="card-body">
 
-                            <h4 class="card-title">All Transactions</h4>
+                            <h4 class="card-title">Recent Transactions</h4>
                             <!--description here -->
                             <p class="card-title-desc">
                             </p>
@@ -33,12 +36,12 @@
                                 style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                 <thead>
                                     <tr>
-                                        <th>NAME</th>
-                                        <th>TRANSACTIONS ID</th>
-                                        <th>TYPE</th>
+                                        <th>DATE</th>
+                                        <th>USER</th>
+                                        <th>TRANSACTION ID</th>
                                         <th>AMOUNT</th>
-                                        <th>STATUS</th>
                                         <th>GATEWAY</th>
+                                        <th>STATUS</th>
                                     </tr>
                                 </thead>
 
@@ -46,12 +49,12 @@
                                 <tbody>
                                     @foreach ($transactdata as $transact)
                                         <tr>
+                                            <td>{{ $transact->user->created_at }}</td>
                                             <td>{{ $transact->user->name }}</td>
                                             <td>{{ $transact->tnx }}</td>
-                                            <td>{{ $transact->type }}</td>
                                             <td>{{ $transact->invest_amount }}</td>
-                                            <td>{{ $transact->status }}</td>
                                             <td>{{ $transact->method }}</td>
+                                            <td>{{ $transact->status }}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>

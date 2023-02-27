@@ -37,7 +37,7 @@
                 </li>
 
                 <li>
-                    <a href="javascript: void(0);" class="waves-effect">
+                    <a href="{{ route('admin.depositlog') }}" class="waves-effect">
                         <i class="ri-layout-3-line"></i>
                         <span>Investments History</span>
                     </a>

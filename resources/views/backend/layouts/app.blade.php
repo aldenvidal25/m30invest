@@ -23,11 +23,8 @@
         <!-- ============================================================== -->
         <div class="main-content">
             @yield('content')
-
             <!-- End Page-content -->
             @include('backend.include.__footer')
-
-
         </div>
         <!-- end main content-->
 

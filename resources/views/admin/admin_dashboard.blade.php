@@ -63,11 +63,8 @@
         <!-- ============================================================== -->
         <div class="main-content">
             @yield('admin')
-
             <!-- End Page-content -->
             @include('admin.body.footer')
-
-
         </div>
         <!-- end main content-->
 
