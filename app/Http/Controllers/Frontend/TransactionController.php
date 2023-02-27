@@ -10,7 +10,17 @@ class TransactionController extends Controller
 {
     public function transactions()
     {
-        $transactdata = Transaction::All();
-        return view('frontend.user.transaction.index', compact('transactdata'));
+        $users = auth()->user();
+        $transactions = Transaction::where('user_id', $users->id);
+
+        $recentTransactions = $transactions->latest()->take(5)->get();
+
+        $dataCount = [
+            'total_transactions' => $transactions->count(),
+            'total_investment' => $users->totalInvestment(),
+            'total_withdraw' => $users->totalWithdraw(),
+        ];
+
+        return view('frontend.user.transaction.index', compact('dataCount', 'transactions', 'recentTransactions'));
     }
 }

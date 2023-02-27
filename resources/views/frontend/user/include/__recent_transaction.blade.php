@@ -26,7 +26,7 @@
                         <div class="d-flex">
                             <div class="flex-grow-1">
                                 <p class="text-truncate font-size-14 mb-2">All Transactions</p>
-                                <h4 class="mb-2">{{ $users }}</h4>
+                                <h4 class="mb-2">{{ $dataCount['total_transactions'] }}</h4>
                                 {{-- <p class="text-muted mb-0"><span class="text-success fw-bold font-size-12 me-2"><i class="ri-arrow-right-up-line me-1 align-middle"></i>9.23%</span>from previous period</p> --}}
                             </div>
                             <div class="avatar-sm">
@@ -39,12 +39,15 @@
                 </div><!-- end card -->
             </div><!-- end col -->
             <div class="col-xl-3 col-md-6">
+                {{-- @php
+                    dd($transactions);
+                @endphp --}}
                 <div class="card">
                     <div class="card-body">
                         <div class="d-flex">
                             <div class="flex-grow-1">
-                                <p class="text-truncate font-size-14 mb-2">Total Transanctions</p>
-                                <h4 class="mb-2">{{ $transanctions }}</h4>
+                                <p class="text-truncate font-size-14 mb-2">Total Investments</p>
+                                <h4 class="mb-2">{{ $dataCount['total_investment'] }}</h4>
                                 {{-- <p class="text-muted mb-0"><span class="text-danger fw-bold font-size-12 me-2"><i class="ri-arrow-right-down-line me-1 align-middle"></i>1.09%</span>from previous period</p> --}}
                             </div>
                             <div class="avatar-sm">
@@ -61,8 +64,8 @@
                     <div class="card-body">
                         <div class="d-flex">
                             <div class="flex-grow-1">
-                                <p class="text-truncate font-size-14 mb-2">Total Balance</p>
-                                <h4 class="mb-2">{{ $amount }}</h4>
+                                <p class="text-truncate font-size-14 mb-2">Total Payouts</p>
+                                <h4 class="mb-2">{{ $dataCount['total_withdraw'] }}</h4>
                                 {{-- <p class="text-muted mb-0"><span class="text-danger fw-bold font-size-12 me-2"><i class="ri-arrow-right-down-line me-1 align-middle"></i>1.09%</span>from previous period</p> --}}
                             </div>
                             <div class="avatar-sm">
@@ -92,27 +95,25 @@
                             style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
                                     <th>DESCRIPTION</th>
                                     <th>TRANSACTIONS ID</th>
                                     <th>TYPE</th>
                                     <th>AMOUNT</th>
                                     <th>STATUS</th>
-                                    <th>METHOD</th>
+                                    <th>GATEWAY</th>
 
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($transactdata as $trans)
+                                @foreach ($recentTransactions as $transaction)
                                     <tr>
-                                        <td>{{ $trans->id }}</td>
-                                        <td>Deposit With {{ $trans->method }}</td>
-                                        <td>TRX{{ \Carbon\Carbon::parse($trans->created_at)->format('time') }}{{ $trans->id }}
+                                        <td>{{ $transaction->type }} With {{ $transaction->method }}</td>
+                                        <td>{{ $transaction->tnx }}</td>
+                                        <td>{{ $transaction->type }}
                                         </td>
-                                        <td>{{ $trans->type }}</td>
-                                        <td>{{ $trans->invest_amount }}</td>
-                                        <td>{{ $trans->status }}</td>
-                                        <td>{{ $trans->method }}</td>
+                                        <td>{{ $transaction->invest_amount }}</td>
+                                        <td>{{ $transaction->status }}</td>
+                                        <td>{{ $transaction->method }}</td>
                                     </tr>
                                 @endforeach
                             </tbody>
