@@ -119,11 +119,6 @@ Admin's Transaction
                             <!--description here -->
                             <p class="card-title-desc">
                             </p>
-                            @php
-                                dump($transactdata);
-                                // dump($username);
-                            @endphp
-
                             <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap"
                                 style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                 <thead>
@@ -143,7 +138,7 @@ Admin's Transaction
                                         <tr>
                                             <td>{{ $transact->user->name }}</td>
                                             <td>{{ $transact->tnx }}</td>
-                                            <td>Edinburgh</td>
+                                            <td>{{ $transact->tnx }}</td>
                                             <td>61</td>
                                             <td>2011/04/25</td>
                                             <td>$320,800</td>
