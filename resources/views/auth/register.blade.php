@@ -4,12 +4,12 @@
 <head>
 
 <meta charset="utf-8" />
-<title>Register |  Admin </title>
+<title>Register </title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
 <meta content="Themesdesign" name="author" />
 <!-- App favicon -->
-<link rel="shortcut icon" href="{{asset('backend/assets/images/favicon.ico')}}">
+<link rel="shortcut icon" href="{{ asset('frontend/assets/img/favicon.png') }}">
 
 <!-- Bootstrap Css -->
 <link href="{{asset('backend/assets/css/bootstrap.min.css')}}" id="bootstrap-style" rel="stylesheet" type="text/css" />
@@ -20,8 +20,8 @@
 
 </head>
 
-<body class="auth-body-bg">
-<div class="bg-overlay"></div>
+<body class="auth-body">
+<div class="bg-overla"></div>
 <div class="wrapper-page">
 <div class="container-fluid p-0">
 <div class="card">
@@ -30,8 +30,8 @@
 <div class="text-center mt-4">
 <div class="mb-3">
 <a href="index.html" class="auth-logo">
-<img src="{{asset('backend/assets/images/logo-dark.png')}}" height="30" class="logo-dark mx-auto" alt="">
-<img src="{{asset('backend/assets/images/logo-light.png')}}" height="30" class="logo-light mx-auto" alt="">
+<img src="{{ asset('frontend/assets/img/logo/m30.png') }}" height="70" class="logo-dark mx-auto" alt="">
+{{-- <img src="{{asset('backend/assets/images/logo-light.png')}}" height="30" class="logo-light mx-auto" alt=""> --}}
 </a>
 </div>
 </div>
@@ -82,7 +82,7 @@
 
 <div class="form-group text-center row mt-3 pt-1">
 <div class="col-12">
-<button class="btn btn-info w-100 waves-effect waves-light" type="submit">Register</button>
+<button class="btn btn-primary w-100 waves-effect waves-light" type="submit">Register</button>
 </div>
 </div>
 

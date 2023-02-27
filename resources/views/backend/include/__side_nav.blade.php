@@ -9,7 +9,7 @@
                     class="avatar-md rounded-circle">
             </div>
             <div class="mt-3">
-                <h4 class="font-size-16 mb-1">Admin</h4><!-- Edit later -->
+                <h4 class="font-size-16 mb-1"><span class="d-none d-xl-inline-block ms-1">{{ Auth::user()->name }}</span></h4><!-- Edit later -->
                 <span class="text-muted"><i
                         class="ri-record-circle-line align-middle font-size-14 text-success"></i>Admin</span>
                 <!-- Edit later -->

@@ -14,7 +14,7 @@
    
     </div>
     <div class="header__btn d-none d-md-block">
-    <a href="/login" class="btn">Sign In</a>
+    <a href="/user/login" class="btn">Sign In</a>
     </div>
     </nav>
     </div>
