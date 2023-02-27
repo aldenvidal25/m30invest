@@ -3,6 +3,9 @@
     <div class="page-content">
         <div class="container-fluid">
             <!-- start page title -->
+            @php
+                // dd($data);
+            @endphp
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
@@ -27,7 +30,7 @@
                             <div class="d-flex">
                                 <div class="flex-grow-1">
                                     <p class="text-truncate font-size-14 mb-2">Registered Users</p>
-                                    <h4 class="mb-2">938</h4>
+                                    <h4 class="mb-2">{{ $data['register_user'] }}</h4>
                                     <p class="text-muted mb-0"><span class="text-danger fw-bold font-size-12 me-2"><i
                                                 class="ri-arrow-right-down-line me-1 align-middle"></i>1.09%</span>from
                                         previous period</p>
@@ -50,7 +53,7 @@
                             <div class="d-flex">
                                 <div class="flex-grow-1">
                                     <p class="text-truncate font-size-14 mb-2">New Users</p>
-                                    <h4 class="mb-2">8246</h4>
+                                    <h4 class="mb-2">{{ $data['latest_user'] }}</h4>
                                     <p class="text-muted mb-0"><span class="text-success fw-bold font-size-12 me-2"><i
                                                 class="ri-arrow-right-up-line me-1 align-middle"></i>16.2%</span>from
                                         previous period</p>
@@ -69,8 +72,8 @@
                         <div class="card-body">
                             <div class="d-flex">
                                 <div class="flex-grow-1">
-                                    <p class="text-truncate font-size-14 mb-2">Total Investments</p>
-                                    <h4 class="mb-2">938</h4>
+                                    <p class="text-truncate font-size-14 mb-2">Total Investors</p>
+                                    <h4 class="mb-2">{{ $data['deposit_count'] }}</h4>
                                     <p class="text-muted mb-0"><span class="text-danger fw-bold font-size-12 me-2"><i
                                                 class="ri-arrow-right-down-line me-1 align-middle"></i>1.09%</span>from
                                         previous period</p>
@@ -90,7 +93,7 @@
                             <div class="d-flex">
                                 <div class="flex-grow-1">
                                     <p class="text-truncate font-size-14 mb-2">Total Payouts</p>
-                                    <h4 class="mb-2">1452</h4>
+                                    <h4 class="mb-2">{{ $data['payout_count'] }}</h4>
                                     <p class="text-muted mb-0"><span class="text-success fw-bold font-size-12 me-2"><i
                                                 class="ri-arrow-right-up-line me-1 align-middle"></i>9.23%</span>from
                                         previous period</p>
@@ -109,8 +112,8 @@
                         <div class="card-body">
                             <div class="d-flex">
                                 <div class="flex-grow-1">
-                                    <p class="text-truncate font-size-14 mb-2">New Investments</p>
-                                    <h4 class="mb-2">938</h4>
+                                    <p class="text-truncate font-size-14 mb-2">Total Investments</p>
+                                    <h4 class="mb-2">{{ $data['total_investment'] }}</h4>
                                     <p class="text-muted mb-0"><span class="text-danger fw-bold font-size-12 me-2"><i
                                                 class="ri-arrow-right-down-line me-1 align-middle"></i>1.09%</span>from
                                         previous period</p>
@@ -125,26 +128,7 @@
                     </div><!-- end card -->
                 </div><!-- end col -->
 
-                <div class="col-xl-3 col-md-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="d-flex">
-                                <div class="flex-grow-1">
-                                    <p class="text-truncate font-size-14 mb-2">Total Tickets</p>
-                                    <h4 class="mb-2">29670</h4>
-                                    <p class="text-muted mb-0"><span class="text-success fw-bold font-size-12 me-2"><i
-                                                class="ri-arrow-right-up-line me-1 align-middle"></i>11.7%</span>from
-                                        previous period</p>
-                                </div>
-                                <div class="avatar-sm">
-                                    <span class="avatar-title bg-light text-success rounded-3">
-                                        <i class="mdi mdi-currency-btc font-size-24"></i>
-                                    </span>
-                                </div>
-                            </div>
-                        </div><!-- end cardbody -->
-                    </div><!-- end card -->
-                </div><!-- end col -->
+
             </div><!-- end row -->
 
             <div class="row">
