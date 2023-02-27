@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use App\Enums\TxnType;
+use App\Enums\TxnStatus;
 // use Spatie\Permission\Models\Role;
+use App\Models\Transaction;
+use Illuminate\Http\Request;
 use App\Http\Middleware\Role;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Notification;
@@ -15,14 +18,69 @@ class AdminController extends Controller
 {
     public function AdminLogin()
     {
+
+
+
         return view('admin.admin_login');
     }
     //admin dashboard
     public function AdminDashboard()
     {
+        $transaction = new Transaction();
+        $transactdata = Transaction::all();
+        $user = new User();
 
+
+        $latestUser = $user->latest()->take(5)->get();
+
+
+        $latestInvest = Transaction::orderBy('created_at', 'desc')->take(5)->get();
+
+        $depositCount = $transaction->where(function ($query) {
+            $query->where('type', TxnType::Investment)
+                ->where('status', 'success');
+        })->count(); // counts number of invested users
+
+        $totalInvestment = $transaction->where('status', TxnStatus::Success)->where(function ($query) {
+            $query->where('type', TxnType::Investment);
+        }); // sum of investment amount
+
+        $payoutCount = $transaction->where(function ($query) {
+            $query->where('type', TxnType::Withdraw)
+                ->where('status', 'success');
+        })->count();
+
+        $data = [
+            'payout_count' => $payoutCount,
+            'deposit_count' => $depositCount,
+            'users_name' => $user,
+            'register_user' => $user->count(),
+            // 'active_user' => $activeUser,
+            'latest_user' => $latestUser->count(),
+            'latest_username' => $latestUser,
+            // 'latest_invest' => $latestInvest,
+
+            // 'total_staff' => $totalStaff,
+
+            // 'total_deposit' => $totalDeposit->sum('amount'),
+            // 'total_send' => $totalSend,
+            'total_investment' => $totalInvestment->sum('invest_amount'),
+            // 'total_withdraw' => $totalWithdraw,
+            // 'total_referral' => $totalReferral,
+
+            // 'last7days_deposit' => $last7daysDeposit,
+            // 'last7days_invest' => $last7daysInvest,
+
+            // 'deposit_bonus' => $transaction->totalDepositBonus(),
+            // 'investment_bonus' => $transaction->totalInvestBonus(),
+            // 'total_gateway' => $totalGateway,
+            // 'total_ticket' => Ticket::count(),
+
+            // 'date_range' => $dataRange,
+
+        ];
         // return view('admin.index');// old
-        return view('backend.dashboard');
+        return view('backend.dashboard', compact('data', 'transaction'));
     }
 
     public function AdminDestroy(Request $request)

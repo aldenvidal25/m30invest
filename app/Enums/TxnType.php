@@ -12,9 +12,9 @@ enum TxnType: string
     case Referral = 'referral';
     case SignupBonus = 'signup_bonus';
     case Bonus = 'bonus';
-    case Withdraw = 'withdraw';
+    case Withdraw = 'Withdraw';
     case ReceiveMoney = 'receive_money';
-    case Investment = 'investment';
+    case Investment = 'Invest';
     case Interest = 'interest';
     case Refund = 'refund';
 }

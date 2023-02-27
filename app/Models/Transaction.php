@@ -18,4 +18,11 @@ class Transaction extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function totalDeposit()
+    {
+        return $this->where('status', TxnStatus::Success)->where(function ($query) {
+            $query->where('type', TxnType::Investment);
+        });
+    }
 }
