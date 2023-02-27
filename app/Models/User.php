@@ -2,11 +2,14 @@
 
 namespace App\Models;
 
+use App\Enums\TxnStatus;
+use App\Enums\TxnType;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -45,6 +48,20 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function transaction()
     {
-        return $this->hasMany(Transaction::class);
+        return $this->hasMany(Transaction::class, 'user_id');
+    }
+
+    public function totalInvestment()
+    {
+        return $this->transaction()->where('status', TxnStatus::Success)->where(function ($query) {
+            $query->where('type', TxnType::Investment);
+        })->sum('invest_amount');
+    }
+
+    public function totalWithdraw()
+    {
+        return $this->transaction()->where('status', TxnStatus::Success)->where(function ($query) {
+            $query->where('type', TxnType::Withdraw);
+        })->sum('invest_amount');
     }
 }

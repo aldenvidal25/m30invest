@@ -19,7 +19,6 @@
                         style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                         <thead>
                             <tr>
-                                <th>ID</th>
                                 <th>DESCRIPTION</th>
                                 <th>TRANSACTIONS ID</th>
                                 <th>AMOUNT</th>
@@ -30,15 +29,14 @@
 
 
                         <tbody>
-                            @foreach ($transactdata as $trans)
+                            @foreach ($transactions as $transaction)
                                 <tr>
-                                    <td>{{ $trans->id }}</td>
-                                    <td>Deposit With {{ $trans->method }}</td>
-                                    <td>TRX{{ \Carbon\Carbon::parse($trans->created_at)->format('time') }}{{ $trans->id }}
+                                    <td>{{ $transaction->type }} With {{ $transaction->method }}</td>
+                                    <td>{{ $transaction->tnx }}</td>
+                                    <td>{{ $transaction->invest_amount }}</td>
+                                    <td>{{ $transaction->status }}
                                     </td>
-                                    <td>{{ $trans->invest_amount }}</td>
-                                    <td>{{ $trans->status }}</td>
-                                    <td>{{ $trans->method }}</td>
+                                    <td>{{ $transaction->method }}</td>
                                 </tr>
                             @endforeach
                         </tbody>

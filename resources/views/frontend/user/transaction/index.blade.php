@@ -39,22 +39,22 @@
                                         <th>TRANSACTION ID</th>
                                         <th>TYPE</th>
                                         <th>AMOUNT</th>
-                                        <th>DATE</th>
-                                        <th>METHOD</th>
+                                        <th>STATUS</th>
+                                        <th>GATEWAY</th>
                                     </tr>
                                 </thead>
 
 
                                 <tbody>
-                                    @foreach ($transactdata as $trans)
+                                    @foreach ($recentTransactions as $transaction)
                                         <tr>
-                                            <td>{{ $trans->type }} With {{ $trans->method }}</td>
-                                            <td>TRX{{ \Carbon\Carbon::parse($trans->created_at)->format('time') }}{{ $trans->id }}
+                                            <td>{{ $transaction->type }} With {{ $transaction->method }}</td>
+                                            <td>{{ $transaction->tnx }}</td>
+                                            <td>{{ $transaction->type }}
                                             </td>
-                                            <td>{{ $trans->type }}</td>
-                                            <td>{{ $trans->invest_amount }}</td>
-                                            <td>{{ \Carbon\Carbon::parse($trans->created_at)->format('d/m/Y') }}</td>
-                                            <td>{{ $trans->method }}</td>
+                                            <td>{{ $transaction->invest_amount }}</td>
+                                            <td>{{ $transaction->status }}</td>
+                                            <td>{{ $transaction->method }}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>
