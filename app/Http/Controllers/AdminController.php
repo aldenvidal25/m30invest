@@ -17,11 +17,12 @@ class AdminController extends Controller
     {
         return view('admin.admin_login');
     }
-
+    //admin dashboard
     public function AdminDashboard()
     {
 
-        return view('admin.index');
+        // return view('admin.index');// old
+        return view('backend.dashboard');
     }
 
     public function AdminDestroy(Request $request)
