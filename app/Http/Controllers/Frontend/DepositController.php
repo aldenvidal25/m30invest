@@ -6,6 +6,9 @@ use App\Models\Transaction;
 use App\Enums\TxnType;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use Carbon\Carbon;
+use Illuminate\Support\Str;
 
 class DepositController extends Controller
 {
@@ -35,16 +38,53 @@ class DepositController extends Controller
     public function depositNow(Request $request)
     {
 
-        $validated = $request->validate([
+        $validator = Validator::make($request->all(), [
             "method" => ['required'],
             "invest_amount" => ['required', 'regex:/^[0-9]+(\.[0-9][0-9]?)?$/']
         ]);
 
-        $validated['type'] = 'Deposit';
-        $validated['status'] = 'Success';
-        $validated['user_id'] = auth()->id();
+        if ($validator->fails()) {
+            notify()->error($validator->errors()->first(), 'Error');
+            return redirect()->back();
+        }
+        $input = $request->all();
+        //retrieves the investment amount from the input.
 
-        Transaction::create($validated);
+        // $validated = $request->validate([
+        //     "method" => ['required'],
+        //     "invest_amount" => ['required', 'regex:/^[0-9]+(\.[0-9][0-9]?)?$/']
+        // ]);
+
+        $validated = [
+            'type' => 'Invest',
+            'status' => 'Success',
+            'user_id' => auth()->id()
+        ];
+
+        $investAmount = $input['invest_amount'];
+        $investMethod = $input['method'];
+        $depositType = $validated['type'];
+        $status = $validated['status'];
+        $user_id = $validated['user_id'];
+
+        $transactionId = Str::random(10);
+        $nextProfitTime = Carbon::now()->addDays(30);
+
+        $data = [
+            'user_id' => $user_id,
+            'tnx' => $transactionId,
+            'invest_amount' => $investAmount,
+            'type' => $depositType,
+            'method' => $investMethod,
+            'next_profit_time' => $nextProfitTime,
+            'status' => $status,
+        ];
+
+
+        Transaction::create($data);
+
+
+
 
 
         // $transaction = Transaction::create($request->validate([

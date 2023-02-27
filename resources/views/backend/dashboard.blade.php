@@ -3,9 +3,6 @@
     <div class="page-content">
         <div class="container-fluid">
             <!-- start page title -->
-            @php
-                // dd($data);
-            @endphp
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
@@ -166,35 +163,28 @@
                                     <table class="table table-centered mb-0 align-middle table-hover table-nowrap">
                                         <thead class="table-light">
                                             <tr>
+                                                <th>Date</th>
                                                 <th>Name</th>
                                                 <th>Investment</th>
-                                                <th>Remaining Payouts</th>
-                                                <th>Next Payout</th>
+                                                <th>Email</th>
                                                 <th>Status</th>
                                                 <th style="width: 120px;">Action</th>
                                             </tr>
                                         </thead><!-- end thead -->
                                         <tbody>
                                             @foreach ($data['transactions_data'] as $transact)
-                                                @php
-                                                    $calculateInterest = ($transact->interest * $invest->invest_amount) / 100;
-                                                    $interest = $invest->interest_type != 'percentage' ? $invest->interest : $calculateInterest;
-                                                @endphp
                                                 <tr>
-                                                    <td>
-                                                        <h6 class="mb-0">{{ $transact->user->name }}</h6>
-                                                    </td>
+                                                    <td>{{ $transact->created_at }}</td>
+                                                    <td>{{ $transact->user->name }}</td>
                                                     <td>{{ $transact->invest_amount }}</td>
-                                                    <td>
+                                                    <td>{{ $transact->user->email }}</td>
+                                                    {{-- <td>
                                                         <div class="font-size-13"><i
                                                                 class="ri-checkbox-blank-circle-fill font-size-10 text-success align-middle me-2"></i>Active
                                                         </div>
-                                                    </td>
+                                                    </td> --}}
                                                     <td>
-                                                        23
-                                                    </td>
-                                                    <td>
-                                                        04 Apr, 2021
+                                                        {{ $transact->user->next_profit_time }}
                                                     </td>
                                                     <td>$42,450</td>
                                                 </tr>
