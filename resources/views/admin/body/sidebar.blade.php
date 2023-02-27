@@ -30,7 +30,7 @@
                 </li>
 
                 <li>
-                    <a href="{{ route('transactions') }}" class=" waves-effect">
+                    <a href="{{ route('admin.dashboard') }}" class=" waves-effect">
                         <i class="ri-calendar-2-line"></i>
                         <span>Transactions</span>
                     </a>
