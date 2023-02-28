@@ -23,11 +23,16 @@ class DepositController extends Controller
     public function depositLog()
     {
         $users = auth()->user();
-        $transactions = Transaction::where(function ($query) {
-            $query->where('type', TxnType::Investment);
-        })->get();
+        $transactions = Transaction::where('user_id', $users->id);
 
-        return view('user.log', compact('transactions'));
+        $recentTransactions = $transactions->latest()->take(5)->get();
+
+        $dataCount = [
+            'total_transactions' => $transactions->count(),
+            'total_investment' => $users->totalInvestment(),
+            'total_withdraw' => $users->totalWithdraw(),
+        ];
+        return view('user.log', compact('transactions', 'recentTransactions'));
     }
     public function withdrawLog(Request $request)
     {

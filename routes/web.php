@@ -139,7 +139,7 @@ Route::middleware('auth')->group(function () {
 });
 
 //Paypal Route
-Route::post('paypal/payment', [GatewayController::class, 'payment '])->name('payment.payment');
+Route::post('paypal/payment', [GatewayController::class, 'payment'])->name('paypal.payment');
 
 Route::get('paypal/success', [GatewayController::class, 'success'])->name('paypal.success');
 Route::get('paypal/cancel', [GatewayController::class, 'cancel'])->name('paypal.cancel');

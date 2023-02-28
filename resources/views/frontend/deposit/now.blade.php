@@ -63,7 +63,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <label for="method" class="form-label">Payment Method</label>
+                            <label for="method" class="form-label">Upload Screenshot</label>
                             <div class="col-md-6 data" id="gcash">
                                 <div class="col-md-6">
                                     <input name="image" class="form-control" type="file" id="image">

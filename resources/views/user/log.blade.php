@@ -26,10 +26,8 @@
                                 <th>METHOD</th>
                             </tr>
                         </thead>
-
-
                         <tbody>
-                            @foreach ($transactions as $transaction)
+                            @foreach ($recentTransactions as $transaction)
                                 <tr>
                                     <td>{{ $transaction->type }} With {{ $transaction->method }}</td>
                                     <td>{{ $transaction->tnx }}</td>
