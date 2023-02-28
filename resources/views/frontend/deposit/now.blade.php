@@ -38,7 +38,7 @@
                                     </select>
                                     @error('method')
                                         <p class="text-red-500 text-xs mt-2">
-                                            invalid
+                                            invalid selection
                                         </p>
                                     @enderror
                                     <div class="invalid-feedback">
